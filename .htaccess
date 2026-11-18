@@ -1,0 +1,10 @@
+RewriteEngine On
+
+# Mantiene la ruta amigable dentro de la nueva carpeta del proyecto.
+RewriteBase /dwa2/evaluacion_daw2/
+
+# No reescribir archivos ni carpetas existentes.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
+
